@@ -1,41 +1,36 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import optimizedGeometry from "./bracket-optimized-geometry";
-import baselineDisplacement from "./bracket-baseline-displacement";
-import optimizedDisplacement from "./bracket-optimized-displacement";
-import baselineStress from "./bracket-baseline-stress";
-import optimizedStress from "./bracket-optimized-stress";
 
 const basePath = "/portfolio/images/";
 
 const bracketSlides = [
   {
-    src: optimizedGeometry,
+    src: `${basePath}bracket-optimized-geometry.png`,
     label: "Optimized topology + lattice geometry",
     detail: "Topology optimization followed by lattice optimization",
     alt: "Optimized aluminum bracket showing topology-reduced regions and internal lattice geometry",
   },
   {
-    src: baselineDisplacement,
+    src: `${basePath}bracket-baseline-displacement.png`,
     label: "Baseline displacement",
     detail: "Maximum displacement · 5.65888e-03 mm",
     alt: "Baseline aluminum bracket displacement contour with a maximum displacement of 5.65888e-03 millimeters",
   },
   {
-    src: optimizedDisplacement,
+    src: `${basePath}bracket-optimized-displacement.png`,
     label: "Optimized displacement",
     detail: "Maximum displacement · 4.65119e-03 mm",
     alt: "Optimized topology and lattice bracket displacement contour with a maximum displacement of 4.65119e-03 millimeters",
   },
   {
-    src: baselineStress,
+    src: `${basePath}bracket-baseline-stress.png`,
     label: "Baseline stress",
     detail: "Peak stress · 4.03017e+05 Pa",
     alt: "Baseline aluminum bracket stress result with a maximum stress of 4.03017e+05 pascals",
   },
   {
-    src: optimizedStress,
+    src: `${basePath}bracket-optimized-stress.png`,
     label: "Optimized stress",
     detail: "Peak stress · 5.12985e+06 Pa",
     alt: "Optimized topology and lattice bracket stress result with a maximum stress of 5.12985e+06 pascals",
