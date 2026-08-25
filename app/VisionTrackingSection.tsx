@@ -20,14 +20,36 @@ export default function VisionTrackingSection() {
     const aeroponicsLink = rail?.querySelector('a[href="#aeroponics"]');
     let visionLink = rail?.querySelector('[data-vision-rail="true"]') as HTMLAnchorElement | null;
 
+    const renumberRail = () => {
+      const labels: Record<string, string> = {
+        "#launch": "01",
+        "#research": "02",
+        "#design": "03",
+        "#aeroponics": "04",
+        "#vision-tracking": "05",
+        "#rocket": "06",
+        "#turbojet": "07",
+        "#experience": "08",
+        "#toolkit": "09",
+        "#contact": "10",
+      };
+
+      rail?.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href && labels[href]) link.textContent = labels[href];
+      });
+    };
+
     if (rail && aeroponicsLink && !visionLink) {
       visionLink = document.createElement("a");
       visionLink.href = "#vision-tracking";
-      visionLink.textContent = "CV";
-      visionLink.setAttribute("aria-label", "Computer Vision and Tracking");
+      visionLink.textContent = "05";
+      visionLink.setAttribute("aria-label", "Section 05, Computer Vision and Tracking");
       visionLink.dataset.visionRail = "true";
       aeroponicsLink.insertAdjacentElement("afterend", visionLink);
     }
+
+    renumberRail();
 
     return () => {
       host.remove();
@@ -55,10 +77,10 @@ export default function VisionTrackingSection() {
 
   return createPortal(
     <section className="project shell" id="vision-tracking">
-      <div className="stage-label"><b>▮</b> Specialized Project · Computer Vision & Tracking</div>
+      <div className="stage-label"><b>▮</b> Section 05 · Computer Vision & Tracking</div>
       <div className="project-grid">
         <div>
-          <p className="project-number">CV</p>
+          <p className="project-number">05</p>
           <h2>Tracking fast-moving targets with YOLOv8 and ByteTrack</h2>
         </div>
         <div className="project-body">
