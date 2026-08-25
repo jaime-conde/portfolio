@@ -16,7 +16,23 @@ export default function VisionTrackingSection() {
     aeroponics.insertAdjacentElement("afterend", host);
     setMount(host);
 
-    return () => host.remove();
+    const rail = document.querySelector(".rail");
+    const aeroponicsLink = rail?.querySelector('a[href="#aeroponics"]');
+    let visionLink = rail?.querySelector('[data-vision-rail="true"]') as HTMLAnchorElement | null;
+
+    if (rail && aeroponicsLink && !visionLink) {
+      visionLink = document.createElement("a");
+      visionLink.href = "#vision-tracking";
+      visionLink.textContent = "CV";
+      visionLink.setAttribute("aria-label", "Computer Vision and Tracking");
+      visionLink.dataset.visionRail = "true";
+      aeroponicsLink.insertAdjacentElement("afterend", visionLink);
+    }
+
+    return () => {
+      host.remove();
+      visionLink?.remove();
+    };
   }, []);
 
   useEffect(() => {
