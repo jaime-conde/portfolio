@@ -30,15 +30,15 @@ const projects = [
     stage: "Section 03 · Structural Design",
     title: "Lightweighting a lug with stress-driven lattice density",
     description:
-      "An independent data-driven CAD project exploring a variable-density lattice inside a load-bearing lug. I evaluated pin loading, bearing stresses, and stress concentrations, then prepared the design for additive manufacturing and developed a physical comparison test against a fully solid component.",
+      "An independent data-driven CAD project exploring a variable-density lattice inside a load-bearing lug. I evaluated pin loading, bearing stresses, and stress concentrations while developing and comparing stress-driven lattice geometries against the baseline solid component.",
     metrics: [
       ["nTop", "field-driven design"],
       ["FEA", "structural evaluation"],
-      ["A/B", "lattice vs. solid test"],
+      ["A/B", "lattice vs. solid comparison"],
     ],
-    tags: ["nTopology", "Basic FEA", "Additive manufacturing", "Parametric modeling"],
+    tags: ["nTopology", "Basic FEA", "Parametric modeling", "Structural optimization"],
     mediaLabel: "Add project image",
-    mediaHint: "FEA contour · lattice model · printed prototype",
+    mediaHint: "FEA contour · lattice model · optimization results",
   },
   {
     id: "aeroponics",
