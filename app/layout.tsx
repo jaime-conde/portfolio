@@ -4,6 +4,7 @@ import Script from "next/script";
 import VisionTrackingSection from "./VisionTrackingSection";
 import "./globals.css";
 import "./mobile-field.css";
+import "./project-heading-fix.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
