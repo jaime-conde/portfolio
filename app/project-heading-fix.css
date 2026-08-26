@@ -1,0 +1,14 @@
+.project h2 {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+@media (max-width: 520px) {
+  .project h2 {
+    font-size: clamp(36px, 11vw, 50px);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+  }
+}
