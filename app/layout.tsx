@@ -9,7 +9,7 @@ import "./project-heading-fix.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const assetPrefix = process.env.GITHUB_ACTIONS === "true" ? "/portfolio" : "";
-const favicon = `${assetPrefix}/favicon-jc.png?v=20260917-2`;
+const favicon = `${assetPrefix}/favicon-jc.png?v=3`;
 
 export const metadata: Metadata = {
   title: "Portfolio",
