@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   description:
     "Engineering portfolio of Jaime Conde—computational research, lightweight structures, additive manufacturing, and STEM outreach.",
   icons: {
-    icon: `${assetPrefix}/favicon.svg`,
-    shortcut: `${assetPrefix}/favicon.svg`,
+    icon: `${assetPrefix}/favicon-jc.png`,
+    shortcut: `${assetPrefix}/favicon-jc.png`,
+    apple: `${assetPrefix}/favicon-jc.png`,
   },
 };
 
