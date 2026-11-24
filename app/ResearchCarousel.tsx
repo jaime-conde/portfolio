@@ -97,16 +97,20 @@ export default function ResearchCarousel() {
             </object>
           </article>
 
-          {slides.slice(1).map((slide, index) => (
-            <figure
-              className="carousel-slide presentation-slide"
-              aria-hidden={activeSlide !== index + 1}
-              aria-label={`${slide.title}, slide ${index + 2} of 4`}
-              key={slide.title}
-            >
-              <img src={slide.src} alt={slide.alt} />
-            </figure>
-          ))}
+          {slides.slice(1).map((slide, index) => {
+            if (slide.type !== "image") return null;
+
+            return (
+              <figure
+                className="carousel-slide presentation-slide"
+                aria-hidden={activeSlide !== index + 1}
+                aria-label={`${slide.title}, slide ${index + 2} of 4`}
+                key={slide.title}
+              >
+                <img src={slide.src} alt={slide.alt} />
+              </figure>
+            );
+          })}
         </div>
 
         <button className="carousel-arrow carousel-prev" type="button" onClick={() => move(-1)} aria-label="Show previous image">
