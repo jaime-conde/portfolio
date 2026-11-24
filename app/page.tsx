@@ -13,15 +13,15 @@ const projects = [
   {
     id: "research",
     stage: "Section 02 · Computational Research",
-    title: "Modeling the chemistry behind polymer materials",
+    title: "Computational research from molecular catalysts to structural optimization",
     description:
-      "Computational research with Dr. Dutta using Spartan, PM3, and density functional theory to study ethylene-polymerization catalysts. I analyze transition-state geometry, electrostatic potential, stereochemistry, and infrared spectra to connect catalyst behavior with polymer formation and properties.",
+      "My research spans two computational workflows: catalyst modeling with Dr. Dutta using Spartan, PM3, and density functional theory, and an automated MATLAB–nTop optimization study with Dr. Oded Ravid connecting PowerShell, finite element analysis, and staged surrogate-guided search. The structural study reduced bracket mass 32.4% while maintaining a verified design at 109.77 MPa robust stress and FOS 2.095.",
     metrics: [
-      ["PM3 + DFT", "modeling methods"],
-      ["Group 4", "catalyst chemistry"],
-      ["SURS", "2026 presentation"],
+      ["PM3 + DFT", "molecular modeling"],
+      ["32.4%", "lattice mass reduction"],
+      ["2", "research presentations"],
     ],
-    tags: ["Spartan", "Computational chemistry", "Data analysis", "Scientific communication"],
+    tags: ["Spartan", "MATLAB", "nTopology", "Finite element analysis", "Computational chemistry", "Structural optimization"],
     mediaLabel: "Add research image",
     mediaHint: "Molecular model · results plot · SURS poster",
   },
@@ -226,7 +226,7 @@ export default function Home() {
         <a href="#research">
           <small>01 / INVESTIGATE</small>
           <strong>Research</strong>
-          <span>Computational chemistry</span>
+          <span>Computational research</span>
         </a>
         <i aria-hidden="true" />
         <a href="#design">
