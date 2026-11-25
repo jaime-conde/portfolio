@@ -23,15 +23,16 @@ export default function VisionTrackingSection() {
     const renumberRail = () => {
       const labels: Record<string, string> = {
         "#launch": "01",
-        "#research": "02",
-        "#design": "03",
-        "#aeroponics": "04",
-        "#vision-tracking": "05",
-        "#rocket": "06",
-        "#turbojet": "07",
-        "#experience": "08",
-        "#toolkit": "09",
-        "#contact": "10",
+        "#structural-research": "02",
+        "#research": "03",
+        "#design": "04",
+        "#aeroponics": "05",
+        "#vision-tracking": "06",
+        "#rocket": "07",
+        "#turbojet": "08",
+        "#experience": "09",
+        "#toolkit": "10",
+        "#contact": "11",
       };
 
       rail?.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((link) => {
@@ -43,8 +44,8 @@ export default function VisionTrackingSection() {
     if (rail && aeroponicsLink && !visionLink) {
       visionLink = document.createElement("a");
       visionLink.href = "#vision-tracking";
-      visionLink.textContent = "05";
-      visionLink.setAttribute("aria-label", "Section 05, Computer Vision and Tracking");
+      visionLink.textContent = "06";
+      visionLink.setAttribute("aria-label", "Section 06, Computer Vision and Tracking");
       visionLink.dataset.visionRail = "true";
       aeroponicsLink.insertAdjacentElement("afterend", visionLink);
     }

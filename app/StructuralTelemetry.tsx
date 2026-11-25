@@ -27,7 +27,7 @@ const initialTelemetry: Telemetry = {
   status: "NOMINAL",
 };
 
-const sectionIds = ["launch","research","design","aeroponics","rocket","turbojet","experience","toolkit","contact"];
+const sectionIds = ["launch","structural-research","research","design","aeroponics","vision-tracking","rocket","turbojet","experience","toolkit","contact"];
 
 const formatElapsed = (seconds: number) => {
   const hours = Math.floor(seconds / 3600);

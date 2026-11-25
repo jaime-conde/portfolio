@@ -162,14 +162,15 @@ export default function Home() {
 
       <nav className="rail" aria-label="Page sections">
         <a href="#launch">01</a>
-        <a href="#research">02</a>
-        <a href="#design">03</a>
-        <a href="#aeroponics">04</a>
-        <a href="#rocket">05</a>
-        <a href="#turbojet">06</a>
-        <a href="#experience">07</a>
-        <a href="#toolkit">08</a>
-        <a href="#contact">09</a>
+        <a href="#structural-research">02</a>
+        <a href="#research">03</a>
+        <a href="#design">04</a>
+        <a href="#aeroponics">05</a>
+        <a href="#rocket">07</a>
+        <a href="#turbojet">08</a>
+        <a href="#experience">09</a>
+        <a href="#toolkit">10</a>
+        <a href="#contact">11</a>
       </nav>
 
       <section className="hero shell" id="launch">
