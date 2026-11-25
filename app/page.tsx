@@ -246,6 +246,35 @@ export default function Home() {
 
       {projects.map((project, index) => (
         <Fragment key={project.title}>
+        {project.id === "research" ? (
+          <section className="project shell" id="structural-research">
+            <div className="stage-label"><b>▮</b> Research Study 01 · Structural Optimization</div>
+            <div className="project-grid">
+              <div>
+                <p className="project-number">02A</p>
+                <h2>Field-driven optimization of lattice structures using iterative MATLAB–nTop automation</h2>
+              </div>
+              <div className="project-body">
+                <p>
+                  Research with Dr. Oded Ravid developing an automated workflow connecting MATLAB, nTop,
+                  PowerShell, and finite element analysis to iteratively search for lightweight lattice
+                  designs. The staged surrogate-guided optimization reduced the bracket mass from 11.004 g
+                  to 7.435 g while maintaining structural feasibility.
+                </p>
+                <div className="metrics">
+                  <div><strong>32.4%</strong><span>mass reduction</span></div>
+                  <div><strong>109.77 MPa</strong><span>robust stress</span></div>
+                  <div><strong>2.095</strong><span>factor of safety</span></div>
+                </div>
+                <div className="tags">
+                  <span>MATLAB</span><span>nTopology</span><span>PowerShell</span>
+                  <span>Finite element analysis</span><span>Surrogate optimization</span>
+                </div>
+              </div>
+            </div>
+            <StructuralResearchCarousel />
+          </section>
+        ) : null}
         <section className="project shell" id={project.id}>
           <div className="stage-label"><b>▮</b> {project.stage}</div>
           <div className="project-grid">
@@ -289,35 +318,6 @@ export default function Home() {
           )}
         </section>
 
-        {project.id === "research" ? (
-          <section className="project shell" id="structural-research">
-            <div className="stage-label"><b>▮</b> Research Study 02 · Structural Optimization</div>
-            <div className="project-grid">
-              <div>
-                <p className="project-number">02B</p>
-                <h2>Field-driven optimization of lattice structures using iterative MATLAB–nTop automation</h2>
-              </div>
-              <div className="project-body">
-                <p>
-                  Research with Dr. Oded Ravid developing an automated workflow connecting MATLAB, nTop,
-                  PowerShell, and finite element analysis to iteratively search for lightweight lattice
-                  designs. The staged surrogate-guided optimization reduced the bracket mass from 11.004 g
-                  to 7.435 g while maintaining structural feasibility.
-                </p>
-                <div className="metrics">
-                  <div><strong>32.4%</strong><span>mass reduction</span></div>
-                  <div><strong>109.77 MPa</strong><span>robust stress</span></div>
-                  <div><strong>2.095</strong><span>factor of safety</span></div>
-                </div>
-                <div className="tags">
-                  <span>MATLAB</span><span>nTopology</span><span>PowerShell</span>
-                  <span>Finite element analysis</span><span>Surrogate optimization</span>
-                </div>
-              </div>
-            </div>
-            <StructuralResearchCarousel />
-          </section>
-        ) : null}
         </Fragment>
       ))}
 
