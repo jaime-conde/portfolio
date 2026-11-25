@@ -2,50 +2,33 @@
 
 import { useEffect, useState } from "react";
 
-const slides = [
-  {
-    src: "/portfolio/images/GURC-nTop-MATLAB-poster-hq.webp",
-    alt: "Research poster titled Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation",
-    label: "01 / RESEARCH POSTER",
-    title: "Field-Driven Optimization of Lattice Structures",
-    subtitle: "Open the full-size poster",
-  },
-  {
-    src: "/portfolio/images/GURC-nTop-MATLAB-presentation-hq.webp",
-    alt: "Jaime Conde standing beside the Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation research poster",
-    label: "02 / POSTER PRESENTATION",
-    title: "Presenting the MATLAB–nTop Optimization Research",
-    subtitle: "Research poster presentation · 2026",
-  },
-] as const;
+const posterUrl =
+  "/portfolio/images/GURC-nTop-MATLAB-poster-hq.webp";
 
 export default function StructuralResearchCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
+  const slideCount = 2;
 
   useEffect(() => {
     if (isInteracting) return;
-    const timer = window.setTimeout(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slideCount);
     }, 6000);
-    return () => window.clearTimeout(timer);
-  }, [activeSlide, isInteracting]);
+
+    return () => window.clearInterval(timer);
+  }, [isInteracting]);
 
   const move = (direction: number) => {
-    setActiveSlide((current) => (current + direction + slides.length) % slides.length);
+    setActiveSlide((current) => (current + direction + slideCount) % slideCount);
   };
-
-  const active = slides[activeSlide];
 
   return (
     <div
       className="research-carousel"
       aria-roledescription="carousel"
       aria-label="MATLAB and nTop structural optimization research"
-      onPointerEnter={() => setIsInteracting(true)}
-      onPointerLeave={() => setIsInteracting(false)}
-      onFocusCapture={() => setIsInteracting(true)}
-      onBlurCapture={() => setIsInteracting(false)}
       onKeyDown={(event) => {
         if (event.key === "ArrowLeft") move(-1);
         if (event.key === "ArrowRight") move(1);
@@ -53,28 +36,42 @@ export default function StructuralResearchCarousel() {
       tabIndex={0}
     >
       <div className="carousel-viewport">
-        <div className="carousel-track" style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
-          {slides.map((slide, index) => (
-            <figure
-              className="carousel-slide presentation-slide"
-              aria-hidden={activeSlide !== index}
-              aria-label={`${slide.title}, slide ${index + 1} of ${slides.length}`}
-              key={slide.title}
-              style={{ background: "#030b18" }}
+        <div
+          className="carousel-track"
+          style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+        >
+          <article
+            className="carousel-slide poster-slide"
+            aria-hidden={activeSlide !== 0}
+            aria-label="Structural optimization research poster, slide 1 of 2"
+            onPointerEnter={() => setIsInteracting(true)}
+            onPointerLeave={() => setIsInteracting(false)}
+            onFocusCapture={() => setIsInteracting(true)}
+            onBlurCapture={() => setIsInteracting(false)}
+          >
+            <object
+              className="poster-viewer"
+              data={posterUrl}
+              type="image/webp"
+              aria-label="Field-driven lattice optimization research poster preview"
+              tabIndex={activeSlide === 0 ? 0 : -1}
             >
-              <img
-                src={slide.src}
-                alt={slide.alt}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  display: "block",
-                }}
-              />
-            </figure>
-          ))}
+              <a href={posterUrl} target="_blank" rel="noreferrer">
+                Open the research poster
+              </a>
+            </object>
+          </article>
+
+          <figure
+            className="carousel-slide presentation-slide"
+            aria-hidden={activeSlide !== 1}
+            aria-label="Structural optimization poster presentation photo, slide 2 of 2"
+          >
+            <img
+              src="/portfolio/images/GURC-nTop-MATLAB-presentation-hq.webp"
+              alt="Jaime Conde presenting the Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation research poster"
+            />
+          </figure>
         </div>
 
         <button className="carousel-arrow carousel-prev" type="button" onClick={() => move(-1)} aria-label="Show previous image">
@@ -87,32 +84,34 @@ export default function StructuralResearchCarousel() {
 
       <div className="carousel-meta">
         <div>
-          <span className="gallery-label">{active.label}</span>
-          <strong>{active.title}</strong>
+          <span className="gallery-label">
+            {activeSlide === 0 ? "01 / RESEARCH POSTER" : "02 / POSTER PRESENTATION"}
+          </span>
+          <strong>
+            {activeSlide === 0
+              ? "Field-Driven Optimization of Lattice Structures"
+              : "Presenting the MATLAB–nTop Optimization Research"}
+          </strong>
           <small>
             {activeSlide === 0 ? (
-              <a
-                className="poster-download-link"
-                href="/portfolio/images/GURC-nTop-MATLAB-poster-hq.webp"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open the full-size poster
+              <a className="poster-download-link" href={posterUrl} target="_blank" rel="noreferrer">
+                Click here to open the poster
               </a>
             ) : (
-              active.subtitle
+              "Research poster presentation · 2026"
             )}
           </small>
         </div>
+
         <div className="carousel-dots" aria-label="Choose a gallery slide">
-          {slides.map((slide, index) => (
+          {[0, 1].map((slide) => (
             <button
-              key={slide.title}
+              key={slide}
               type="button"
-              className={activeSlide === index ? "active" : ""}
-              onClick={() => setActiveSlide(index)}
-              aria-label={`Show slide ${index + 1}`}
-              aria-current={activeSlide === index ? "true" : undefined}
+              className={activeSlide === slide ? "active" : ""}
+              onClick={() => setActiveSlide(slide)}
+              aria-label={`Show slide ${slide + 1}`}
+              aria-current={activeSlide === slide ? "true" : undefined}
             />
           ))}
         </div>
