@@ -14,7 +14,7 @@ import { Fragment } from "react";
 const projects = [
   {
     id: "research",
-    stage: "Section 02 · Computational Research",
+    stage: "Research Study 02 · Computational Chemistry",
     title: "Modeling the chemistry behind polymer materials",
     description:
       "Computational research with Dr. Dutta using Spartan, PM3, and density functional theory to study ethylene-polymerization catalysts. I analyze transition-state geometry, electrostatic potential, stereochemistry, and infrared spectra to connect catalyst behavior with polymer formation and properties.",
@@ -32,7 +32,7 @@ const projects = [
     stage: "Section 03 · Structural Design",
     title: "Lightweighting a lug with stress-driven lattice density",
     description:
-      "An independent data-driven CAD project exploring a variable-density lattice inside a load-bearing lug. I evaluated pin loading, bearing stresses, and stress concentrations while developing and comparing stress-driven lattice geometries against the baseline solid component.",
+      "An independent structural-design study using field-driven geometry to reduce mass in a load-bearing lug. I focused on how local stress behavior could inform lattice density and material placement while comparing the resulting geometry against the baseline solid component.",
     metrics: [
       ["nTop", "field-driven design"],
       ["FEA", "structural evaluation"],
@@ -184,17 +184,16 @@ export default function Home() {
             and hands-on prototyping to turn technical questions into testable systems.
           </p>
           <p className="intro">
-            My work spans molecular catalyst modeling, stress-driven lightweighting,
-            sustainable systems, student rocket structures, and early-stage propulsion design. I am preparing to transfer
-            in Spring 2027 and pursue aerospace research in aerostructures and advanced
-            manufacturing.
+            My work spans structural optimization, computational research, aerospace design,
+            sustainable systems, student rocket structures, and early-stage propulsion development.
+            My interests center on aerostructures, computational engineering, and advanced manufacturing.
           </p>
           <div className="status-row">
             <span>3.7 GPA</span><span>2026 SURS Presenter</span><span>STEP Mentor</span>
-            <span>REP</span><span>HOPE Scholar</span>
+            <span>GOT Space</span><span>HOPE Scholar</span>
           </div>
           <div className="hero-actions">
-            <a className="button primary" href="#research">Explore projects</a>
+            <a className="button primary" href="#structural-research">Explore projects</a>
             <a className="button" href="#experience">View experience</a>
             <a
               className="button"
@@ -225,10 +224,10 @@ export default function Home() {
       </section>
 
       <nav className="trajectory shell" aria-label="Engineering workflow and project shortcuts">
-        <a href="#research">
+        <a href="#structural-research">
           <small>01 / INVESTIGATE</small>
           <strong>Research</strong>
-          <span>Computational chemistry</span>
+          <span>Computational structures + chemistry</span>
         </a>
         <i aria-hidden="true" />
         <a href="#design">
@@ -279,7 +278,7 @@ export default function Home() {
           <div className="stage-label"><b>▮</b> {project.stage}</div>
           <div className="project-grid">
             <div>
-              <p className="project-number">0{index + 2}</p>
+              <p className="project-number">{project.id === "research" ? "02B" : `0${index + 2}`}</p>
               <h2>{project.title}</h2>
             </div>
             <div className="project-body">
