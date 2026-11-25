@@ -2,16 +2,19 @@
 
 import { useEffect, useState } from "react";
 
+const posterUrl =
+  "/portfolio/images/Field-Driven%20Optimization%20of%20Lattice%20Structures%20Using%20Iterative%20MATLAB-NTOP%20Automation.pdf";
+
 const slides = [
   {
-    src: "/portfolio/images/GURC-nTop-MATLAB-poster.webp",
-    alt: "Research poster titled Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation",
+    type: "pdf",
     label: "01 / RESEARCH POSTER",
     title: "Field-Driven Optimization of Lattice Structures",
-    subtitle: "MATLAB · nTop · PowerShell · FEA",
+    subtitle: "Open the full-resolution poster",
   },
   {
-    src: "/portfolio/images/GURC-nTop-MATLAB-presentation.webp",
+    type: "image",
+    src: "/portfolio/images/IMG_4598.jpg",
     alt: "Jaime Conde standing beside the Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation research poster",
     label: "02 / POSTER PRESENTATION",
     title: "Presenting the MATLAB–nTop Optimization Research",
@@ -54,16 +57,34 @@ export default function StructuralResearchCarousel() {
     >
       <div className="carousel-viewport">
         <div className="carousel-track" style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
-          {slides.map((slide, index) => (
-            <figure
-              className="carousel-slide presentation-slide"
-              aria-hidden={activeSlide !== index}
-              aria-label={`${slide.title}, slide ${index + 1} of ${slides.length}`}
-              key={slide.title}
+          <article
+            className="carousel-slide poster-slide"
+            aria-hidden={activeSlide !== 0}
+            aria-label="Structural optimization research poster, slide 1 of 2"
+          >
+            <object
+              className="poster-viewer"
+              data={`${posterUrl}#zoom=page-width&toolbar=0&navpanes=0`}
+              type="application/pdf"
+              aria-label="Scrollable MATLAB and nTop structural optimization research poster"
+              tabIndex={activeSlide === 0 ? 0 : -1}
             >
-              <img src={slide.src} alt={slide.alt} />
-            </figure>
-          ))}
+              <a href={posterUrl} target="_blank" rel="noreferrer">
+                Open the full-resolution poster
+              </a>
+            </object>
+          </article>
+
+          <figure
+            className="carousel-slide presentation-slide"
+            aria-hidden={activeSlide !== 1}
+            aria-label="Poster presentation photo, slide 2 of 2"
+          >
+            <img
+              src="/portfolio/images/IMG_4598.jpg"
+              alt="Jaime Conde standing beside the Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation research poster"
+            />
+          </figure>
         </div>
 
         <button className="carousel-arrow carousel-prev" type="button" onClick={() => move(-1)} aria-label="Show previous image">
@@ -78,7 +99,15 @@ export default function StructuralResearchCarousel() {
         <div>
           <span className="gallery-label">{active.label}</span>
           <strong>{active.title}</strong>
-          <small>{active.subtitle}</small>
+          <small>
+            {activeSlide === 0 ? (
+              <a className="poster-download-link" href={posterUrl} target="_blank" rel="noreferrer">
+                Open the full-resolution poster
+              </a>
+            ) : (
+              active.subtitle
+            )}
+          </small>
         </div>
         <div className="carousel-dots" aria-label="Choose a gallery slide">
           {slides.map((slide, index) => (
