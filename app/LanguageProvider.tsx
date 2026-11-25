@@ -106,6 +106,67 @@ const spanish: Record<string, string> = {
   "Assembly perspective": "Perspectiva del ensamblaje", "Angled view of the developing turbojet and annular combustor packaging": "Vista angular del turborreactor en desarrollo y del empaquetado del combustor anular", "Ignition section": "Sección de encendido", "Section view of the flame-tube geometry and ignition-region layout": "Vista seccionada de la geometría del tubo de llama y la zona de encendido", "Exhaust-end cutaway": "Corte desde el escape", "Internal packaging and flow-path context viewed from the exhaust end": "Empaquetado interno y trayectoria de flujo vistos desde el escape",
   "RESEARCH POSTER": "PÓSTER DE INVESTIGACIÓN", "Computational Analysis of Group 4 Metallocene Analogs": "Análisis computacional de análogos de metaloceno del Grupo 4", "Presenting at the Summer Undergraduate Research Symposium": "Presentación en el Simposio de Investigación de Pregrado de Verano", "Click here to download the poster": "Haz clic aquí para descargar el póster", "Summer Undergraduate Research Symposium · 2026": "Simposio de Investigación de Pregrado de Verano · 2026",
   "Dashboard": "Panel", "Annual Inputs": "Entradas anuales", "Check Allocator": "Asignador de cheques", "Spending Tracker": "Registro de gastos", "Lists": "Listas",
+
+  // Computer vision project
+  "Section 05 · Computer Vision & Tracking": "Sección 05 · Visión por Computadora y Seguimiento",
+  "Tracking fast-moving targets with YOLOv8 and ByteTrack": "Seguimiento de objetivos de movimiento rápido con YOLOv8 y ByteTrack",
+  "An independent computer-vision project focused on detecting and tracking small, fast-moving aerospace targets in video. I trained a custom YOLOv8 model and tuned ByteTrack for persistent target IDs across video frames, then used OpenCV to process and export annotated tracking results.": "Proyecto independiente de visión por computadora centrado en detectar y seguir objetivos aeroespaciales pequeños y de movimiento rápido en video. Entrené un modelo YOLOv8 personalizado y ajusté ByteTrack para mantener identificadores persistentes entre fotogramas; después utilicé OpenCV para procesar y exportar los resultados de seguimiento anotados.",
+  "final recall": "recobrado final",
+  "validation epochs": "épocas de validación",
+  "Computer vision": "Visión por computadora",
+  "Tracked output / detection + persistent IDs": "Salida de seguimiento / detección + IDs persistentes",
+  "Three evaluation clips · annotated output only": "Tres clips de evaluación · solo salida anotada",
+  "Computer vision tracking demonstrations": "Demostraciones de seguimiento por visión por computadora",
+  "Tracking demo 01": "Demostración de seguimiento 01",
+  "Tracking demo 02": "Demostración de seguimiento 02",
+  "Tracking demo 03": "Demostración de seguimiento 03",
+  "Your browser does not support embedded MP4 video.": "Tu navegador no admite video MP4 incrustado.",
+  "Tracking architecture / implemented pipeline": "Arquitectura de seguimiento / flujo implementado",
+  "Computer vision tracking pipeline": "Flujo de seguimiento por visión por computadora",
+  "Custom-trained target detection": "Detección de objetivos con modelo entrenado a medida",
+  "Persistent IDs across video frames": "IDs persistentes entre fotogramas",
+  "Video capture, annotation, and output": "Captura, anotación y exportación de video",
+  "Tuned ByteTrack thresholds for small, fast-moving targets and persistent frame-to-frame association.": "Ajusté los umbrales de ByteTrack para objetivos pequeños y de movimiento rápido, manteniendo la asociación persistente entre fotogramas.",
+  "Processed video frame-by-frame with OpenCV while preserving tracker state between frames.": "Procesé el video fotograma a fotograma con OpenCV, conservando el estado del rastreador entre fotogramas.",
+  "Validation performance continued improving through epoch 20, with mAP@50 reaching 81.9% and mAP@50–95 reaching 40.1%.": "El rendimiento de validación siguió mejorando hasta la época 20, con un mAP@50 de 81.9 % y un mAP@50–95 de 40.1 %.",
+  "YOLO validation progression": "Evolución de la validación de YOLO",
+  "YOLO mAP validation progression over 20 epochs": "Evolución del mAP de validación de YOLO durante 20 épocas",
+  "20 epochs": "20 épocas",
+  "final mAP@50": "mAP@50 final",
+  "final precision": "precisión final",
+  "peak precision": "precisión máxima",
+
+  // Structural optimization research and lug
+  "VARIABLE-DENSITY LUG": "OREJETA DE DENSIDAD VARIABLE",
+  "MATLAB and nTop structural optimization research": "Investigación de optimización estructural con MATLAB y nTop",
+  "Structural optimization research poster, slide 1 of 2": "Póster de investigación de optimización estructural, diapositiva 1 de 2",
+  "Scrollable field-driven lattice optimization research poster preview": "Vista previa desplazable del póster de investigación sobre optimización reticular guiada por campos",
+  "Structural optimization poster presentation photo, slide 2 of 2": "Foto de la presentación del póster de optimización estructural, diapositiva 2 de 2",
+  "Download the research poster": "Descargar el póster de investigación",
+  "Show previous image": "Mostrar imagen anterior",
+  "Show next image": "Mostrar imagen siguiente",
+  "Choose a gallery slide": "Elegir una diapositiva de la galería",
+
+  // Aeroponics additions
+  "Aeroponics automation prototype integrating pH, EC/TDS, and water-temperature sensors with an OLED interface for nutrient monitoring and setup validation.": "Prototipo de automatización aeropónica que integra sensores de pH, EC/TDS y temperatura del agua con una interfaz OLED para monitorear nutrientes y validar la configuración.",
+  "Aeroponic system project gallery": "Galería del proyecto del sistema aeropónico",
+  "Previous project image": "Imagen anterior del proyecto",
+  "Next project image": "Imagen siguiente del proyecto",
+  "Choose project image": "Elegir imagen del proyecto",
+  "Aeroponic project planning and budget presentation": "Presentación de planificación y presupuesto del proyecto aeropónico",
+
+  // Research carousel accessibility
+  "Dr. Dutta research and SURS presentation": "Investigación con la Dra. Dutta y presentación en SURS",
+  "Research poster, slide 1 of 2": "Póster de investigación, diapositiva 1 de 2",
+  "Scrollable computational analysis research poster preview": "Vista previa desplazable del póster de investigación de análisis computacional",
+  "SURS presentation photo, slide 2 of 2": "Foto de la presentación en SURS, diapositiva 2 de 2",
+  "Jaime Conde presenting computational chemistry research at the 2026 Summer Undergraduate Research Symposium": "Jaime Conde presentando investigación de química computacional en el Simposio de Investigación de Pregrado de Verano de 2026",
+
+  // Workbook accessibility
+  "Excel calculator workbook sheets": "Hojas del libro de cálculo de Excel",
+  "Show previous workbook sheet": "Mostrar hoja anterior del libro",
+  "Show next workbook sheet": "Mostrar hoja siguiente del libro",
+  "Choose a workbook sheet": "Elegir una hoja del libro",
 };
 
 type LanguageContextValue = { language: Language; t: (text: string) => string };
