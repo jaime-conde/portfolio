@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const posterUrl =
-  "/portfolio/images/GURC-nTop-MATLAB-poster-hq.webp";
+  "/portfolio/images/ntop-matlab-poster.pdf";
 
 export default function StructuralResearchCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -51,13 +51,13 @@ export default function StructuralResearchCarousel() {
           >
             <object
               className="poster-viewer"
-              data={posterUrl}
-              type="image/webp"
-              aria-label="Field-driven lattice optimization research poster preview"
+              data={`${posterUrl}#zoom=page-width&toolbar=0&navpanes=0`}
+              type="application/pdf"
+              aria-label="Scrollable field-driven lattice optimization research poster preview"
               tabIndex={activeSlide === 0 ? 0 : -1}
             >
-              <a href={posterUrl} target="_blank" rel="noreferrer">
-                Open the research poster
+              <a href={posterUrl} download="Jaime-Conde-nTop-MATLAB-Research-Poster.pdf">
+                Download the research poster
               </a>
             </object>
           </article>
@@ -68,7 +68,7 @@ export default function StructuralResearchCarousel() {
             aria-label="Structural optimization poster presentation photo, slide 2 of 2"
           >
             <img
-              src="/portfolio/images/GURC-nTop-MATLAB-presentation-hq.webp"
+              src="/portfolio/images/ntop-matlab-presentation.jpg"
               alt="Jaime Conde presenting the Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation research poster"
             />
           </figure>
@@ -94,8 +94,8 @@ export default function StructuralResearchCarousel() {
           </strong>
           <small>
             {activeSlide === 0 ? (
-              <a className="poster-download-link" href={posterUrl} target="_blank" rel="noreferrer">
-                Click here to open the poster
+              <a className="poster-download-link" href={posterUrl} download="Jaime-Conde-nTop-MATLAB-Research-Poster.pdf">
+                Click here to download the poster
               </a>
             ) : (
               "Research poster presentation · 2026"
