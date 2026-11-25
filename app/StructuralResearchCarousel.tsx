@@ -69,9 +69,10 @@ export default function StructuralResearchCarousel() {
               aria-label="Scrollable MATLAB and nTop structural optimization research poster"
               tabIndex={activeSlide === 0 ? 0 : -1}
             >
-              <a href={posterUrl} target="_blank" rel="noreferrer">
-                Open the full-resolution poster
-              </a>
+              <img
+                src="/portfolio/images/GURC-nTop-MATLAB-poster.webp"
+                alt="Fallback preview of the MATLAB and nTop structural optimization research poster"
+              />
             </object>
           </article>
 
@@ -83,6 +84,10 @@ export default function StructuralResearchCarousel() {
             <img
               src="/portfolio/images/IMG_4598.jpg"
               alt="Jaime Conde standing beside the Field-Driven Optimization of Lattice Structures Using Iterative MATLAB-nTop Automation research poster"
+              onError={(event) => {
+                event.currentTarget.onerror = null;
+                event.currentTarget.src = "/portfolio/images/GURC-nTop-MATLAB-presentation.webp";
+              }}
             />
           </figure>
         </div>
