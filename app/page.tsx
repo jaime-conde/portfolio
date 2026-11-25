@@ -8,20 +8,22 @@ import TurbojetGallery from "./TurbojetGallery";
 import ExcelCarousel from "./ExcelCarousel";
 import LanguageProvider from "./LanguageProvider";
 import EdgeLattice from "./EdgeLattice";
+import StructuralResearchCarousel from "./StructuralResearchCarousel";
+import { Fragment } from "react";
 
 const projects = [
   {
     id: "research",
     stage: "Section 02 · Computational Research",
-    title: "Computational research from molecular catalysts to structural optimization",
+    title: "Modeling the chemistry behind polymer materials",
     description:
-      "My research spans two computational workflows: catalyst modeling with Dr. Dutta using Spartan, PM3, and density functional theory, and an automated MATLAB–nTop optimization study with Dr. Oded Ravid connecting PowerShell, finite element analysis, and staged surrogate-guided search. The structural study reduced bracket mass 32.4% while maintaining a verified design at 109.77 MPa robust stress and FOS 2.095.",
+      "Computational research with Dr. Dutta using Spartan, PM3, and density functional theory to study ethylene-polymerization catalysts. I analyze transition-state geometry, electrostatic potential, stereochemistry, and infrared spectra to connect catalyst behavior with polymer formation and properties.",
     metrics: [
-      ["PM3 + DFT", "molecular modeling"],
-      ["32.4%", "lattice mass reduction"],
-      ["2", "research presentations"],
+      ["PM3 + DFT", "modeling methods"],
+      ["Group 4", "catalyst chemistry"],
+      ["SURS", "2026 presentation"],
     ],
-    tags: ["Spartan", "MATLAB", "nTopology", "Finite element analysis", "Computational chemistry", "Structural optimization"],
+    tags: ["Spartan", "Computational chemistry", "Data analysis", "Scientific communication"],
     mediaLabel: "Add research image",
     mediaHint: "Molecular model · results plot · SURS poster",
   },
@@ -226,7 +228,7 @@ export default function Home() {
         <a href="#research">
           <small>01 / INVESTIGATE</small>
           <strong>Research</strong>
-          <span>Computational research</span>
+          <span>Computational chemistry</span>
         </a>
         <i aria-hidden="true" />
         <a href="#design">
@@ -243,7 +245,8 @@ export default function Home() {
       </nav>
 
       {projects.map((project, index) => (
-        <section className="project shell" id={project.id} key={project.title}>
+        <Fragment key={project.title}>
+        <section className="project shell" id={project.id}>
           <div className="stage-label"><b>▮</b> {project.stage}</div>
           <div className="project-grid">
             <div>
@@ -285,6 +288,37 @@ export default function Home() {
             </div>
           )}
         </section>
+
+        {project.id === "research" ? (
+          <section className="project shell" id="structural-research">
+            <div className="stage-label"><b>▮</b> Research Study 02 · Structural Optimization</div>
+            <div className="project-grid">
+              <div>
+                <p className="project-number">02B</p>
+                <h2>Field-driven optimization of lattice structures using iterative MATLAB–nTop automation</h2>
+              </div>
+              <div className="project-body">
+                <p>
+                  Research with Dr. Oded Ravid developing an automated workflow connecting MATLAB, nTop,
+                  PowerShell, and finite element analysis to iteratively search for lightweight lattice
+                  designs. The staged surrogate-guided optimization reduced the bracket mass from 11.004 g
+                  to 7.435 g while maintaining structural feasibility.
+                </p>
+                <div className="metrics">
+                  <div><strong>32.4%</strong><span>mass reduction</span></div>
+                  <div><strong>109.77 MPa</strong><span>robust stress</span></div>
+                  <div><strong>2.095</strong><span>factor of safety</span></div>
+                </div>
+                <div className="tags">
+                  <span>MATLAB</span><span>nTopology</span><span>PowerShell</span>
+                  <span>Finite element analysis</span><span>Surrogate optimization</span>
+                </div>
+              </div>
+            </div>
+            <StructuralResearchCarousel />
+          </section>
+        ) : null}
+        </Fragment>
       ))}
 
       <section className="experience shell" id="experience">
